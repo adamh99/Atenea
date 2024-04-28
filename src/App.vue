@@ -1,23 +1,22 @@
 <template>
   <v-app>
     <v-main>
-      <HelloWorld/>
+      <EstatMatricules/>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import EstatMatricules from './components/Status.vue'
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    EstatMatricules,
   },
 
   data: () => ({
-    //
-  }),
+    }),
 }
 </script>
