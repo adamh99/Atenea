@@ -2,26 +2,19 @@
 
 <div>
 
+<h1>Inciar session</h1>
+
 <form>
 
 <label>
 
-    Email
+    dni, pasaporte, nie o tsi
 
-    <input type="text" v-model="email" />
-
-</label>
-
-<label>
-
-    Password
-
-    <input type="text" v-model="password" />
+    <input type="text" v-model="identificador" />
 
 </label>
 
 <button type="submit">LOGIN</button>
-
 
 </form>
 
@@ -39,8 +32,7 @@ data () {
 
     return{
 
-        email: "",
-        password: ""
+        identificador: ""
 
     };
 },
@@ -59,8 +51,8 @@ methods: {
 
             body: JSON.stringify({
 
-                email: this.email,
-                password: this.password
+                identificador: this.identificador,
+                
             })
         });
 

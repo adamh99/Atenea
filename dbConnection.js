@@ -22,12 +22,11 @@ connection.connect((err) => {
 
 });
 
-connection.query('SELECT EMAIL, PASSWORD FROM USERS', (error, results, fields) => {
+connection.query('SELECT * FROM USUARIOS WHERE DNI = ? OR PASAPORTE = ? OR NIE = ? OR TSI = ? LIMIT 1', (error, results, fields) => {
 
     if(error) throw error;
     console.log('Resultados: ', results);
 
 });
-
 
 connection.end();
