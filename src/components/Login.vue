@@ -4,7 +4,7 @@
 
 <h1>Inciar session</h1>
 
-<form>
+<form @submit.prevent="login">
 
 <label>
 
