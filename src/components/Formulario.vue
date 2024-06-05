@@ -4,7 +4,7 @@
 
 <h2>FITXA MATRICULA</h2>
 
-<form @submit.prevent="fitxaMatricula">
+<form class = "form-center" style="text-align: center;" @submit.prevent="fitxaMatricula">
 
 <table>
 
@@ -70,7 +70,8 @@ data (){
             telefono: '',
             dni: '',
             tsi: '',
-            nie: ''
+            nie: '',
+            mensaje: ''
     };
 
 },
@@ -79,7 +80,8 @@ methods: {
 
 async fitxaMatricula(){
 
-    
+    try{
+
     const response = await axios.post('/api/fitxa-matricula', {
         nombre: this.nombre,
         apellidos: this.apellidos,
@@ -90,32 +92,34 @@ async fitxaMatricula(){
         tsi: this.tsi,
         nie: this.nie
 
-
-
-
-
     });
 
+    this.mensaje = 'Datos añadidos con éxito',
+    this.limpiarFormulario();
 
+    }catch (error){
+
+        console.error(error);
+        this.mensaje = 'Error añadiendo los datos'
+    }
 
 },
 
 limpiarFormulario(){
 
-    this.nombre = '',
-    this.apellidos = '',
-    this.idalu = '',
-    this.direccion = '',
-    this.telefono = '',
-    this.dni = '',
-    this.tsi = '',
-    this.nie = '',
-
-
-}
+    this.nombre = '';
+    this.apellidos = '';
+    this.idalu = '';
+    this.direccion = '';
+    this.telefono = '';
+    this.dni = '';
+    this.tsi = '';
+    this.nie = '';
 
 }
 
 }
+
+};
 
 </script>
