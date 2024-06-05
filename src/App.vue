@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-main>
-      <Login/>
+      <LoginMatricula/>
       <EstatMatricules/>
     </v-main>
   </v-app>
@@ -9,14 +9,14 @@
 
 <script>
 import EstatMatricules from './components/Status.vue'
-import Login from './components/Login.vue';
+import LoginMatricula from './components/LoginMatricula.vue';
 
 export default {
   name: 'App',
 
   components: {
     EstatMatricules,
-    Login
+    LoginMatricula
   },
 
   data: () => ({

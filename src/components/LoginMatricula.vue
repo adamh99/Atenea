@@ -26,7 +26,7 @@
 
 export default{
 
-name: 'Login',
+name: 'LoginMatricula',
 
 data () {
 
