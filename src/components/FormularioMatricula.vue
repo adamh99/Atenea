@@ -57,7 +57,7 @@
 
 export default{
 
-name: 'Formulario',
+name: 'FormularioMatricula',
 
 data (){
 
