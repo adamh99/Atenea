@@ -24,6 +24,8 @@
 
 <script>
 
+import axios from 'axios';
+
 export default{
 
 name: 'LoginMatricula',
@@ -39,31 +41,21 @@ data () {
 
 methods: {
 
-    async handleLogin(){
+    async login(){
 
-        const response = await fetch('http://localhost:3306/login', {
+        try{
 
-            method: 'POST',
-            headers: {
+            const response = await axios.post('/api/login', {indentificador: this.identificador});
+            
+            if(response.data.usuario){
 
-                'Content-Type': 'application/json'
-            },
+                localStorage.setItem('user', JSON.stringify(response.data.usuario));
+                this.$router.push('/Status');
 
-            body: JSON.stringify({
+            }
 
-                identificador: this.identificador,
-                
-            })
-        });
-
-        if(response.ok){
-
-            const data = await response.json();
-            console.log(data);
-        
-        }else{
-
-            console.error('Iniciar session fallido');
+        }catch(error){
+            console.error(error);
         }
     }
 }
