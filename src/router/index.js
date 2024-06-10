@@ -11,14 +11,19 @@ const routes = [
     component: LoginMatricula
 
 
+},
+
+{
+    path: '/status',
+    name: 'EstatMatricules',
+    component: Status
+},
+
+{
+    path: '/formulario',
+    name: 'FormularioMatricula',
+    component: FormularioMatricula
 }
-
-
-
-
-
-
-
 
 
 ];
