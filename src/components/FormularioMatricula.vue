@@ -96,8 +96,15 @@ async fitxaMatricula(){
 
     });
 
-    this.mensaje = 'Datos añadidos con éxito',
-    this.limpiarFormulario();
+    if(response.status === 201){
+
+        this.mensaje = 'Exito añadiendo los datos';
+        this.limpiarFormulario();
+    
+    }else{
+
+        this.mensaje = 'Error añadiendo los datos';
+    }
 
     }catch (error){
 
